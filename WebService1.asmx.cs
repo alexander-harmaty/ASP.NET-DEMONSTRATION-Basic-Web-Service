@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Services;
 using System.Data;
 using Newtonsoft.Json;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace CafeCodeApp
 {
@@ -20,6 +22,8 @@ namespace CafeCodeApp
     {
 
         DataTable dtCountries = new DataTable();
+        DBAccess objDBAccess = new DBAccess();
+        DataTable dtUsers = new DataTable();
 
         [WebMethod]
         public string HelloWorld()
@@ -47,6 +51,16 @@ namespace CafeCodeApp
             dtCountries.Rows.Add("New Zealand", "Oceana");
 
             return JsonConvert.SerializeObject(dtCountries);
+        }
+
+        [WebMethod]
+        public string dataTableForUsers(string id)
+        {
+            string query = "Select * From Users Where ID = '" + id + "'";
+            objDBAccess.readDatathroughAdapter(query, dtUsers);
+
+            string result = JsonConvert.SerializeObject(dtUsers);
+            return result;
         }
     }
 }
