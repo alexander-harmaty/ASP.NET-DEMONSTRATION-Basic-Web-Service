@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Services;
 using System.Data;
 using Newtonsoft.Json;
-using System.Data;
 using System.Data.SqlClient;
 
 namespace CafeCodeApp
@@ -54,9 +53,9 @@ namespace CafeCodeApp
         }
 
         [WebMethod]
-        public string dataTableForUsers(string id)
+        public string dataTableForUsers(string ID)
         {
-            string query = "Select * From Users Where ID = '" + id + "'";
+            string query = "Select * From Users Where ID = '" + ID + "'";
             objDBAccess.readDatathroughAdapter(query, dtUsers);
 
             string result = JsonConvert.SerializeObject(dtUsers);
