@@ -53,9 +53,9 @@ namespace CafeCodeApp
         }
 
         [WebMethod]
-        public string dataTableForUsers(string ID)
+        public string dataTableForUsers(string id)
         {
-            string query = "Select * From Users Where ID = '" + ID + "'";
+            string query = "Select * From Users Where ID = '" + id + "'";
             objDBAccess.readDatathroughAdapter(query, dtUsers);
 
             string result = JsonConvert.SerializeObject(dtUsers);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -15,7 +16,7 @@ namespace CafeCodeApp
         private static SqlDataAdapter adapter = new SqlDataAdapter();
         public SqlTransaction DbTran;
 
-        private static string strConnString = "Data Source=(local);Initial Catalog=master;Integrated Security=True";
+        private static string strConnString = "Data Source=localhostMSSQLSERVER01;Initial Catalog=SocialNetwork;Integrated Security=True";
 
 
 
