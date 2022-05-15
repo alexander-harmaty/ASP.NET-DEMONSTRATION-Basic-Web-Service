@@ -16,7 +16,7 @@ namespace CafeCodeApp
         private static SqlDataAdapter adapter = new SqlDataAdapter();
         public SqlTransaction DbTran;
 
-        private static string strConnString = "Data Source=localhostMSSQLSERVER01;Initial Catalog=SocialNetwork;Integrated Security=True";
+        private static string strConnString = "Data Source=local;Initial Catalog=SocialNetwork;Integrated Security=True";
 
 
 

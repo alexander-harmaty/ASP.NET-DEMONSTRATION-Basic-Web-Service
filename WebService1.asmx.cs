@@ -21,8 +21,8 @@ namespace CafeCodeApp
     {
 
         DataTable dtCountries = new DataTable();
-        DBAccess objDBAccess = new DBAccess();
-        DataTable dtUsers = new DataTable();
+        //DBAccess objDBAccess = new DBAccess();
+        //DataTable dtUsers = new DataTable();
 
         [WebMethod]
         public string HelloWorld()
@@ -52,14 +52,14 @@ namespace CafeCodeApp
             return JsonConvert.SerializeObject(dtCountries);
         }
 
-        [WebMethod]
-        public string dataTableForUsers(string id)
-        {
-            string query = "Select * From Users Where ID = '" + id + "'";
-            objDBAccess.readDatathroughAdapter(query, dtUsers);
+        //[WebMethod]
+        //public string dataTableForUsers(string id)
+        //{
+        //    string query = "Select * From Users Where ID = '" + id + "'";
+        //    objDBAccess.readDatathroughAdapter(query, dtUsers);
 
-            string result = JsonConvert.SerializeObject(dtUsers);
-            return result;
-        }
+        //    string result = JsonConvert.SerializeObject(dtUsers);
+        //    return result;
+        //}
     }
 }
